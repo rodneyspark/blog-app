@@ -4,7 +4,8 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST ='app/static/photos'
-    
+    QUOTE_URL='http://quotes.stormconsultancy.co.uk/random.json'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://user:rodgaks@localhost/blogpost'
     #email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
@@ -19,16 +20,16 @@ class Config:
     
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://user:rodgaks@localhost/mondayy''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://user:rodgaks@localhost/blogpost'
 
 
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-
+    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    pass
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://user:rodgaks@localhost/mondayy''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://user:rodgaks@localhost/blogpost'
     DEBUG = True
 
 config_options = {

@@ -8,7 +8,7 @@ from flask_login import login_required,current_user
 from ..email import mail_message
 import secrets
 import os
-from PIL import Image
+# from PIL import Image
 
 @main.route('/')
 def index():
